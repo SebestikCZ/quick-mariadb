@@ -9,9 +9,11 @@ module.exports = {
 		}
 		const pool = mariadb.createPool(options);
 		var conn = pool.getConnection();
-		var sql = `SELECT ${key} from ${table}`;
+		var sqlInit = `CREATE TABLE IF NOT EXIST ${table} (key TEXT, json TEXT)`;
+		conn.query(sqlInit);
+		sqlInit = `SELECT ${key} from ${table}`;
 		let result;
-		conn.query(sql).then(result = {});
+		result = conn.query(sqlInit);
 		const gettedValue = get.getValue(result);
 		return gettedValue;
 	},
@@ -19,10 +21,14 @@ module.exports = {
 		const pool = mariadb.createPool(options);
 		var conn = pool.getConnection();
 		var selection = conn.query(`SELECT ${key} from ${table}`);
+		if (!selection) {
+			var sql = `CREATE TABLE IF NOT EXIST ${table} (key TEXT, json TEXT)`;
+		}
 		var sql;
 		if (selection.includes(value)) {
-			sql = `UPDATE \`${table}\` SET WHERE ${selection.indexof(value)}`
+			sql = `UPDATE \`${table}\` SET \`key\`=${key}, \`json\`=${value} WHERE ${selection.indexof(value)}`
+		} else {
+			sql = `INSERT ${key} INTO ${table}`;
 		}
-		sql = `INSERT ${key} INTO ${table}`;
 	}
 }
