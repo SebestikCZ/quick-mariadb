@@ -4,6 +4,9 @@ const set = require('./set.js');
 
 module.exports = {
 	get: async function (options, table, key) {
+		if (!options | !table | !key) {
+			throw new TypeError("One (or more) required parameters unspecified.");
+		}
 		const pool = mariadb.createPool(options);
 		var conn = pool.getConnection();
 		var sql = `SELECT ${key} from ${table}`;
