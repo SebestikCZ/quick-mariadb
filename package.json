@@ -1,0 +1,19 @@
+{
+  "name": "quick-mariadb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebestikCZ/quick-mariadb.git"
+  },
+  "author": "SebestikCZ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SebestikCZ/quick-mariadb/issues"
+  },
+  "homepage": "https://github.com/SebestikCZ/quick-mariadb#readme"
+}
