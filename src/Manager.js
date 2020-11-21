@@ -21,10 +21,10 @@ module.exports = {
 		const pool = mariadb.createPool(options);
 		var conn = pool.getConnection();
 		var selection = conn.query(`SELECT ${key} from ${table}`);
-		if (!selection) {
-			var sql = `CREATE TABLE IF NOT EXIST ${table} (key TEXT, json TEXT)`;
-		}
 		var sql;
+		if (!selection) {
+			sql = `CREATE TABLE IF NOT EXIST ${table} (key TEXT, json TEXT)`;
+		}
 		if (selection.includes(value)) {
 			sql = `UPDATE \`${table}\` SET \`key\`=${key}, \`json\`=${value} WHERE ${selection.indexof(value)}`
 		} else {
