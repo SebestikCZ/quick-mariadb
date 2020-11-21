@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "app-dir": "/home/circleci/project/index.js",
   "scripts": {
     "test": "npm test"
   },
