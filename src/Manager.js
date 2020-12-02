@@ -26,9 +26,10 @@ module.exports = {
 			sql = `CREATE TABLE IF NOT EXIST ${table} (key TEXT, json TEXT)`;
 		}
 		if (selection.includes(value)) {
-			sql = `UPDATE \`${table}\` SET \`key\`=${key}, \`json\`=${value} WHERE ${selection.indexof(value)}`
+			sql = `UPDATE \`${table}\` SET \`key\`=${key}, \`json\`=${value} WHERE ID = (?)`
 		} else {
 			sql = `INSERT ${key} INTO ${table}`;
 		}
+		conn.query(sql, []
 	}
 }
