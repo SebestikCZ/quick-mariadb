@@ -1,5 +1,0 @@
-
-
-static async function (menu) {
-	
-}
