@@ -1,5 +1,5 @@
 module.exports = {
 	getValue: async function (result) {
-		const string = JSON.stringify(result[0]);
+		const string = JSON.parse(result[0]);
 	}
 }
