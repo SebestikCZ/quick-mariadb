@@ -32,6 +32,6 @@ module.exports = {
 		} else {
 			sql = `INSERT ${key} INTO ${table}`;
 		}
-		set.queryValue(sql, options, value);
+		set.queryValue(sql, ops, value, conn);
 	}
 }
