@@ -22,14 +22,16 @@ module.exports = {
 		var conn = pool.getConnection();
 		var selection = conn.query(`SELECT ${key} from ${table}`);
 		var sql;
+		var ops;
 		if (!selection) {
 			sql = `CREATE TABLE IF NOT EXIST ${table} (key TEXT, json TEXT)`;
 		}
 		if (selection.includes(value)) {
-			sql = `UPDATE \`${table}\` SET \`key\`=${key}, \`json\`=${value} WHERE ID = (?)`
+			sql = `UPDATE \`${table}\` SET \`json\`=(?) WHERE key = (?)`
+			ops = [key, value]
 		} else {
 			sql = `INSERT ${key} INTO ${table}`;
 		}
-		conn.query(sql, []
+		set.queryValue(sql, options, value);
 	}
 }
