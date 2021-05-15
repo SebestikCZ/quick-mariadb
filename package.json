@@ -1,0 +1,24 @@
+{
+  "name": "quick-mariadb",
+  "version": "0.0.0",
+  "description": "NPM module",
+  "main": "index.js",
+  "app-dir": "/home/circleci/project/index.js",
+  "scripts": {
+    "test": "run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebestikCZ/quick-mariadb.git"
+  },
+  "author": "SebestikCZ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SebestikCZ/quick-mariadb/issues"
+  },
+  "homepage": "https://github.com/SebestikCZ/quick-mariadb#readme",
+  "dependencies": {
+    "mariadb": "^2.5.2",
+    "npm": "^6.14.9"
+  }
+}
