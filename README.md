@@ -37,3 +37,5 @@ async function push(options, array, element) {
   return setted;
 }
 ```
+
+© Šebestíček | Working with 🧄Garlic Team
