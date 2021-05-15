@@ -4,9 +4,6 @@
   "description": "NPM module",
   "main": "index.js",
   "app-dir": "/home/circleci/project/index.js",
-  "scripts": {
-    "test": "run.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SebestikCZ/quick-mariadb.git"
