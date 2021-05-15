@@ -29,3 +29,11 @@ async function set(options) {
   return setted;
 }
 ```
+If you want to push into array, just do this to set:
+```js
+async function set(options, array, element) {
+  array.push(element);
+  const setted = await db.set(options, "table_name", "key", array);
+  return setted;
+}
+```
