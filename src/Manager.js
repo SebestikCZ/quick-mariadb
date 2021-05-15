@@ -34,7 +34,7 @@ module.exports = {
 		var sql;
 		var ops;
 		if (!selection) {
-			sql = `INSERT INTO ${table} (ID, json) VALUES ('${key}', '${JSON.stringify(value)}')`;
+			sql = `INSERT INTO ${table} (ID, json) VALUES ('${key}', '${typeof value === "object" ? JSON.stringify(value) : value}')`;
 			queriedOutput = await set.queryValue(sql, conn);
 			conn.close();
 			return queriedOutput;
