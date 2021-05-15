@@ -1,6 +1,6 @@
 {
   "name": "quick-mariadb",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "NPM module",
   "main": "index.js",
   "app-dir": "/home/circleci/project/index.js",
